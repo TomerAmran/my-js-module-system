@@ -14,5 +14,5 @@ function my_require(pathToFile) {
   return module.exports;
 }
 
-const { add3 } = my_require("./common_js/math.js");
+const { add3 } = my_require("./math.js");
 console.log(add3(2), "should be equal 5");
