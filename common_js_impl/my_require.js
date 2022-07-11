@@ -7,7 +7,7 @@ const wrapAsModule = (code) => `((module, exports) => {
 
 function my_require(pathToFile) {
   const module = { exports: {} };
-  const code = fs.readFileSync(require.resolve(pathToFile)).toString();
+  const code = fs.readFileSync(pathToFile).toString();
   const codeAsModule = wrapAsModule(code);
   const script = new vm.Script(codeAsModule);
   script.runInNewContext()(module, module.exports);
